@@ -24,3 +24,84 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+
+/* ===== ALERTARIO - DARK TECNOLÓGICO ===== */
+
+:root {
+  --ar-bg: #07111f;
+  --ar-surface: #0d1b2d;
+  --ar-surface-hover: #12243a;
+  --ar-border: #1e334b;
+  --ar-text: #f1f5f9;
+  --ar-muted: #94a3b8;
+  --ar-primary: #38bdf8;
+  --ar-success: #34d399;
+  --ar-warning: #fbbf24;
+  --ar-danger: #fb7185;
+}
+
+html {
+  color-scheme: dark;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--ar-bg);
+  color: var(--ar-text);
+}
+
+/* Seleção de texto */
+::selection {
+  background: rgba(56, 189, 248, 0.3);
+  color: #ffffff;
+}
+
+/* Barra de rolagem */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--ar-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #29425d;
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--ar-primary);
+}
+
+/* Animação discreta para os elementos */
+@keyframes ar-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.ar-animate {
+  animation: ar-fade-in 0.35s ease-out both;
+}
+
+/* Respeita quem prefere menos animações */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
